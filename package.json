@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/jashgopani/cursor-nearby-elements.git"
   },
+  "type": "module",
   "keywords": [
     "cursor",
     "nearby",
