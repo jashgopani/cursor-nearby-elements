@@ -1,6 +1,6 @@
 {
   "name": "cursor-nearby-elements",
-  "version": "2.2.12",
+  "version": "2.2.13",
   "description": "Find DOM  elements near to cursor",
   "repository": {
     "type": "git",
