@@ -21,6 +21,6 @@ exports.nearbyElements = function (directions = 8, offset = 69) {
             }
 
             return acc;
-        });
+        }, []);
     };
 };
