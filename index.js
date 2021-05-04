@@ -1,4 +1,4 @@
-module.exports = function nearbyElements(directions = 8) {
+exports.nearbyElements = function (directions = 8) {
     const angles = Array(directions)
         .fill(0.25)
         .map((val, i) => {
