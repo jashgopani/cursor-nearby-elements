@@ -13,7 +13,7 @@ exports.nearbyElements = function (directions = 8, offset = 69) {
             const cy = Math.floor(y + Math.sin(rad) * offset);
             const element = document.elementFromPoint(cx, cy);
             if (element && acc.findIndex((ae) => ae.id === element.id) < 0) {
-                if (predicate === null && predicate && predicate(element))
+                if (predicate === null || (predicate && predicate(element)))
                     return [...acc, element];
             }
 
