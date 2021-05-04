@@ -5,7 +5,7 @@ exports.nearbyElements = function (directions = 8, offset = 69) {
             return Math.PI * i * val;
         });
 
-    return (e, predicate = null) => {
+    return (e, predicate = null, modifier = null) => {
         const x = e.clientX; //x position within the element.
         const y = e.clientY; //y position within the element.
         return angles.reduce((acc, rad) => {
@@ -14,7 +14,7 @@ exports.nearbyElements = function (directions = 8, offset = 69) {
             const element = document.elementFromPoint(cx, cy);
             if (element && acc.findIndex((ae) => ae.id === element.id) < 0) {
                 if (predicate === null || (predicate && predicate(element)))
-                    return [...acc, element];
+                    return [...acc, modifier ? modifier(element) : element];
             }
 
             return acc;
