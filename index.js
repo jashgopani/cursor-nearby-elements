@@ -14,7 +14,7 @@ exports.nearbyElements = function (directions, offset) {
             const cx = Math.floor(x + Math.cos(rad) * offset);
             const cy = Math.floor(y + Math.sin(rad) * offset);
             const element = document.elementFromPoint(cx, cy);
-            if (element && acc.findIndex((ae) => ae.id === element.id) < 0) {
+            if (element !== null && element !== undefined && acc.findIndex((ae) => ae.id === element.id) < 0) {
                 if (predicate === null || (predicate && predicate(element)))
                     return [...acc, modifier ? modifier(element) : element];
             }
