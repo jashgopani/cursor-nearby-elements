@@ -6,7 +6,7 @@
  */
 exports.nearbyElements = function (directions, offset) {
     const angles = Array(directions ?? 8)
-        .fill(0.25)
+        .fill(360 / directions)
         .map((val, i) => {
             return Math.PI * i * val;
         });
