@@ -5,13 +5,14 @@
  * @returns Function(event,predicate,modifier)
  */
 exports.nearbyElements = function (directions, offset) {
-    const angles = Array(directions ?? 8)
+    directions = directions ?? 8;
+    offset = offset ?? 69;
+
+    const angles = Array(directions)
         .fill((360 / directions).toFixed(2))
         .map((val, i) => {
             return Math.PI * i * val;
         });
-
-    offset = offset ?? 69;
 
     return (e, predicate, modifier) => {
         const x = e.clientX; //x position within the element.
