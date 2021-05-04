@@ -1,3 +1,31 @@
+/**
+ * Function calculates and finds elements near the cursor positon
+ * @param {Event} e The event object you receive inside event handler
+ * @param {Function} predicate Function that returns whether a nearby element should be selected or not [true | false]
+ * @param {Function} modifier Function that modifies the elements and returns it 
+ * @returns Array of elements near the cursor
+ */
+const angleReducer = (e, predicate, modifier) => {
+    const x = e.clientX; //x position within the element.
+    const y = e.clientY; //y position within the element.
+    return angles.reduce((acc, rad) => {
+        const cx = Math.floor(x + Math.cos(rad) * offset);
+        const cy = Math.floor(y + Math.sin(rad) * offset);
+        const element = document.elementFromPoint(cx, cy);
+        if (element !== null && element !== undefined && acc.findIndex((ae) => ae.id === element.id) < 0) {
+            if (predicate === null || (predicate && predicate(element)))
+                return [...acc, modifier ? modifier(element) : element];
+        }
+        return acc;
+    }, []);
+};
+
+/**
+ * This returns a function that can be used to find elements near your cursor. The parameters are some configurations which can be set accoriding to use case.
+ * @param {Number} directions Number of directions to look for nearby elements around cursor [default is 8]
+ * @param {Number} offset The distance from the cursor at which we look for elements 
+ * @returns Function(event,predicate,modifier)
+ */
 exports.nearbyElements = function (directions, offset) {
     const angles = Array(directions ?? 8)
         .fill(0.25)
@@ -7,19 +35,5 @@ exports.nearbyElements = function (directions, offset) {
 
     offset = offset ?? 69;
 
-    return (e, predicate, modifier) => {
-        const x = e.clientX; //x position within the element.
-        const y = e.clientY; //y position within the element.
-        return angles.reduce((acc, rad) => {
-            const cx = Math.floor(x + Math.cos(rad) * offset);
-            const cy = Math.floor(y + Math.sin(rad) * offset);
-            const element = document.elementFromPoint(cx, cy);
-            if (element !== null && element !== undefined && acc.findIndex((ae) => ae.id === element.id) < 0) {
-                if (predicate === null || (predicate && predicate(element)))
-                    return [...acc, modifier ? modifier(element) : element];
-            }
-
-            return acc;
-        }, []);
-    };
+    return angleReducer;
 };
