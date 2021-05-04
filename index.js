@@ -14,18 +14,50 @@ exports.nearbyElements = function (directions, offset) {
             return Math.PI * i * val;
         });
 
-    return (e, predicate, modifier) => {
+    const isFunction = (obj) => {
+        return typeof obj === "function" && obj;
+    };
+
+    return (e, predicate, modifier, offsetPoints, shouldSkipAngle) => {
         const x = e.clientX; //x position within the element.
         const y = e.clientY; //y position within the element.
-        return angles.reduce((acc, rad) => {
-            const cx = Math.floor(x + Math.cos(rad) * offset);
-            const cy = Math.floor(y + Math.sin(rad) * offset);
-            const element = document.elementFromPoint(cx, cy);
-            if (element !== null && element !== undefined && acc.findIndex((ae) => ae.id === element.id) < 0) {
-                if (predicate === null || (predicate && predicate(element)))
-                    return [...acc, modifier ? modifier(element) : element];
+        const memo = [];
+        if (offsetPoints) {
+            const zi = offsetPoints.indexOf(0);
+            if (zi > -1) {
+                offsetPoints.splice(zi, 1);
+                if (e.target) {
+                    if (!predicate || (isFunction(predicate) && predicate(e.target))) {
+                        memo.push(isFunction(modifier) ? modifier(e.target) : e.target);
+                    }
+                }
             }
-            return acc;
-        }, []);
+        }
+        return angles.reduce((acc, rad, angleIndex) => {
+            if (isFunction(shouldSkipAngle) && shouldSkipAngle(rad, angleIndex)) {
+                return acc;
+            }
+            const offsets = offsetPoints ?? [1];
+            const elements = offsets.reduce((elementAccumulator, o) => {
+                const cx = Math.floor(x + Math.cos(rad) * offset * o);
+                const cy = Math.floor(y + Math.sin(rad) * offset * o);
+                const element = document.elementFromPoint(cx, cy);
+
+                if (
+                    element &&
+                    elementAccumulator.findIndex((ae) => ae.id === element.id) < 0 &&
+                    acc.findIndex((ae) => ae.id === element.id) < 0
+                ) {
+                    if (!predicate || (isFunction(predicate) && predicate(element))) {
+                        return [
+                            ...elementAccumulator,
+                            isFunction(modifier) ? modifier(element) : element,
+                        ];
+                    }
+                }
+                return elementAccumulator;
+            }, []);
+            return acc.concat(elements);
+        }, memo);
     };
 };
