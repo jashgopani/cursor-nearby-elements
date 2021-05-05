@@ -79,9 +79,21 @@ function handleMouseMove(e) {
 }
 ```
 
-### Please note
+### Extras
+
 **1. If you are using framework like react:**
-You should not modify DOM elements directly, you have to get the element's `ref` somehow.
+You should not modify DOM elements directly, you have to get the element's `ref` somehow. I have a simple solution lined up for that too...please keep watching this project  :)
+
+**2. I have a codesandbox setup for testing and demo of the package, you can playaround with the code there to get a better understanding of the package**
+
+[![cursor-nearby-elements DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/cursor-nearby-elements-demo-36tvn?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview)
+
+<iframe src="https://codesandbox.io/embed/cursor-nearby-elements-demo-36tvn?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="cursor-nearby-elements DEMO"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
 
 
