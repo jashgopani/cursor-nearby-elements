@@ -5,6 +5,17 @@
 [![GitHub issues](https://img.shields.io/github/issues/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/issues) [![GitHub forks](https://img.shields.io/github/forks/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/network) [![GitHub stars](https://img.shields.io/github/stars/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/stargazers) [![GitHub license](https://img.shields.io/github/license/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/blob/main/LICENSE)
 
 
+# Table of contents
+- [Features](#features)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+    - [Visual representation of the parameters](#visual-representation-of-the-parameters)
+    - [*nearbyElements ([directions,offset])*](#nearbyelements-directionsoffset)
+    - [*nearby (event, [ predicate, modifier, offsetPoints, shouldSkipAngle ])*](#nearby-event--predicate-modifier-offsetpoints-shouldskipangle-)
+- [Example](#example)
+- [Extras](#extras)
+
+
 ### Features
 * Find all elements near the cursor.
 * Filter the nearby elements based on some conditions.
