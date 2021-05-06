@@ -4,7 +4,7 @@
  * @param {Number} offset The distance from the cursor at which we look for elements [default is 69]
  * @returns Function(event,predicate,modifier)
  */
-exports.nearbyElements = function (directions, offset) {
+const nearbyElements = function (directions, offset) {
     directions = directions ?? 8;
     offset = offset ?? 69;
 
@@ -61,3 +61,5 @@ exports.nearbyElements = function (directions, offset) {
         }, memo);
     };
 };
+
+export default nearbyElements;
