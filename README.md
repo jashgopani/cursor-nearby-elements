@@ -106,7 +106,7 @@ function handleMouseMove(e) {
 ### Extras
 
 **1. If you are using framework like react:**
-You should not modify DOM elements directly, you have to get the element's `ref` somehow. I have a simple solution lined up for that too...please keep watching this project :)
+You should not modify DOM elements directly, you must change `state` or use `ref`s. Since this package returns a DOM element object, what you can do is store the `ref` of all the target elements in a dictionary/map like object with key as `stringify` version of `ref` and value as the `ref` object itself using [react-ref-compare](https://www.npmjs.com/package/react-ref-compare) package.
 
 **2. I have a codesandbox setup for testing and demo of the package, you can playaround with the code there to get a better understanding of the package**
 
