@@ -39,7 +39,7 @@ npm i cursor-nearby-elements
 Import the method using `import` syntax and save the output of `nearbyElements` method in some variable.
 
 ```javascript
-import nearbyElements from cursor-nearby-elements;
+import {nearbyElements} from cursor-nearby-elements;
 const nearby = nearbyElements();
 ```
 
