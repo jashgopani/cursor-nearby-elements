@@ -7,6 +7,7 @@
 # Table of contents
 
 - [Features](#features)
+- [Changelog](#changelog)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
   - [Visual representation of the parameters](#visual-representation-of-the-parameters)
@@ -15,6 +16,11 @@
 - [Example](#example)
 - [Extras](#extras)
 
+### Changelog
+
+* @3.2.1 - bundled code and nearbyElements is not a default export
+* @3.1.1 - initial stable version
+  
 ### Features
 
 - Find all elements near the cursor.

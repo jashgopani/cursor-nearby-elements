@@ -62,4 +62,4 @@ const nearbyElements = function (directions, offset) {
     };
 };
 
-export default nearbyElements;
+export { nearbyElements };
