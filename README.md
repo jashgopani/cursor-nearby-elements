@@ -18,7 +18,7 @@
 
 ### Changelog
 
-* @3.2.1 - bundled code and nearbyElements is not a default export
+* @3.2.0 - bundled code and nearbyElements is not a default export
 * @3.1.1 - initial stable version
   
 ### Features
