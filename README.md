@@ -2,7 +2,11 @@
 
 ## This package helps you find elements near cursor position
 
-[![GitHub issues](https://img.shields.io/github/issues/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/issues) [![GitHub forks](https://img.shields.io/github/forks/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/network) [![GitHub stars](https://img.shields.io/github/stars/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/stargazers) [![GitHub license](https://img.shields.io/github/license/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/blob/main/LICENSE)
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=jashgopani.cursor-nearby-elements)
+[![GitHub issues](https://img.shields.io/github/issues/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/issues) 
+[![GitHub forks](https://img.shields.io/github/forks/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/network) 
+[![GitHub stars](https://img.shields.io/github/stars/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/stargazers) 
+[![GitHub license](https://img.shields.io/github/license/jashgopani/cursor-nearby-elements)](https://github.com/jashgopani/cursor-nearby-elements/blob/main/LICENSE)
 
 # Table of contents
 
